@@ -148,7 +148,7 @@ def run_clock(stdscr, zones):
         stdscr.refresh()
 
         key = stdscr.getch()
-        if key == ord("q") or key == 27:
+        if key in (ord("q"), ord("Q"), 27):
             break
 
 
@@ -223,7 +223,7 @@ def run_chrono(stdscr):
         if key == -1:
             continue
 
-        if key == ord("q") or key == 27:
+        if key in (ord("q"), ord("Q"), 27):
             return elapsed
 
         elif key == ord(" "):
@@ -352,7 +352,7 @@ def run_timer(stdscr, minutes):
         if key == -1:
             continue
 
-        if key == ord("q") or key == 27:
+        if key in (ord("q"), ord("Q"), 27):
             break
 
         elif key == ord(" "):

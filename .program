@@ -1,5 +1,5 @@
 name: clock
-version: 0.1.0
+version: 0.1.1
 author: @spacemany2k38
 description: Terminal clock, stopwatch, and timer with curses TUI
 type: cli-tool
