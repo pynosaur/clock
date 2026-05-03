@@ -1,0 +1,39 @@
+NAME: clock
+FULL_NAME: "Python Terminal Clock"
+VERSION: "0.1.0"
+DESCRIPTION: >
+  Terminal clock, stopwatch, and timer with curses TUI. Show current time in
+  any timezone, compare multiple clocks side by side, run a stopwatch with lap
+  tracking, set countdown timers, or time piped commands. Pure Python, stdlib only.
+USAGE:
+  - "clock"
+  - "clock UTC-3 UTC"
+  - "clock GMT-3"
+  - "clock -c"
+  - "<command> | clock -c"
+  - "clock -t <minutes>"
+OPTIONS:
+  - "-h, --help              Show help message"
+  - "-v, --version           Show version information"
+  - "-c                      Stopwatch/chronometer mode"
+  - "-t <minutes>            Countdown timer mode"
+  - "TIMEZONE...             One or more timezone specs (UTC, UTC-3, GMT+5:30, EST, etc.)"
+EXAMPLES:
+  - "clock                          # Show local time"
+  - "clock UTC-3                    # Show UTC-3 clock"
+  - "clock UTC-3 UTC JST            # Compare three timezones"
+  - "clock GMT+5:30                 # India Standard Time"
+  - "clock -c                       # Interactive stopwatch (space=start/lap)"
+  - "ls -R / | clock -c             # Time a command via pipe"
+  - "clock -t 5                     # 5 minute countdown"
+  - "clock -t 0.5                   # 30 second countdown"
+  - "clock -t 25                    # Pomodoro timer"
+KEYBINDINGS:
+  - "Clock mode:     q/Esc = quit"
+  - "Stopwatch:      space = start/lap, s = stop, r = reset, q = quit"
+  - "Timer:          space = pause/resume, r = restart, q = quit"
+OUTPUT: >
+  Curses-based TUI with big digit display. Pipe mode outputs passthrough with
+  timing summary on stderr.
+AUTHOR: "@spacemany2k38"
+DATE: "2026-05-03"
