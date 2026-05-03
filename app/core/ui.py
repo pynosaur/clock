@@ -376,21 +376,26 @@ def run_timer(stdscr, minutes):
 # ── Pipe chronometer (non-curses) ────────────────────────────────────────────
 
 def run_pipe_chrono(stdin_lines):
-    """Read stdin lines, pass them through, then print elapsed time.
+    """Read stdin, pass through in real time, print elapsed when done.
     Used for: some_command | clock -c"""
     import sys
+    import os
     import signal
 
     # Restore default SIGINT so Ctrl+C kills us immediately,
     # even when the upstream process (e.g. calc) catches it.
     signal.signal(signal.SIGINT, signal.SIG_DFL)
 
+    in_fd = sys.stdin.fileno()
+    out_fd = sys.stdout.fileno()
     start = time.monotonic()
     try:
-        for line in stdin_lines:
-            sys.stdout.write(line)
-            sys.stdout.flush()
-    except BrokenPipeError:
+        while True:
+            data = os.read(in_fd, 4096)
+            if not data:
+                break
+            os.write(out_fd, data)
+    except OSError:
         pass
     elapsed = time.monotonic() - start
 
