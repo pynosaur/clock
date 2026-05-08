@@ -2,7 +2,7 @@
 
 Terminal clock, stopwatch, and timer with curses TUI.
 
-Version: 0.1.0
+Version: 0.1.4
 
 ## Features
 
