@@ -19,6 +19,7 @@ RUN python -m nuitka \
     --onefile-tempdir-spec=/tmp/nuitka-${TOOL_NAME} \
     --no-progressbar \
     --assume-yes-for-downloads \
+    --no-deployment-flag=self-execution \
     --output-filename=${TOOL_NAME}-linux-amd64 \
     app/main.py
 
