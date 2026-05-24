@@ -1,6 +1,6 @@
 NAME: clock
 FULL_NAME: "Python Terminal Clock"
-VERSION: "0.1.4"
+VERSION: "0.1.5"
 DESCRIPTION: >
   Terminal clock, stopwatch, and timer with curses TUI. Show current time in
   any timezone, compare multiple clocks side by side, run a stopwatch with lap
